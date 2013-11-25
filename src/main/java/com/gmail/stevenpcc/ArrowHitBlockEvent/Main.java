@@ -25,10 +25,10 @@ public class Main extends JavaPlugin implements Listener {
     @EventHandler
     private void onProjectileHit(final ProjectileHitEvent e) {
         if (e.getEntityType() == EntityType.ARROW) {
+            // Must be run in a delayed task otherwise it won't be able to find the block
             Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
                 public void run() {
                     try {
-                        World world = e.getEntity().getWorld();
 
                         net.minecraft.server.v1_6_R3.EntityArrow entityArrow = ((CraftArrow) e
                                 .getEntity()).getHandle();
@@ -48,8 +48,8 @@ public class Main extends JavaPlugin implements Listener {
                         int y = fieldY.getInt(entityArrow);
                         int z = fieldZ.getInt(entityArrow);
 
-                        if (!isNotValidBlock(x, y, z)) {
-                            Block block = world.getBlockAt(x, y, z);
+                        if (isValidBlock(x, y, z)) {
+                            Block block = e.getEntity().getWorld().getBlockAt(x, y, z);
                             Bukkit.getServer()
                                     .getPluginManager()
                                     .callEvent(
@@ -58,16 +58,12 @@ public class Main extends JavaPlugin implements Listener {
                         }
 
                     } catch (NoSuchFieldException e1) {
-                        // TODO Auto-generated catch block
                         e1.printStackTrace();
                     } catch (SecurityException e1) {
-                        // TODO Auto-generated catch block
                         e1.printStackTrace();
                     } catch (IllegalArgumentException e1) {
-                        // TODO Auto-generated catch block
                         e1.printStackTrace();
                     } catch (IllegalAccessException e1) {
-                        // TODO Auto-generated catch block
                         e1.printStackTrace();
                     }
                 }
@@ -76,8 +72,9 @@ public class Main extends JavaPlugin implements Listener {
         }
     }
 
-    private boolean isNotValidBlock(int x, int y, int z) {
-        return x == -1 || y == -1 || z == -1;
+    // If the arrow hits a mob or player the coords will be -1
+    private boolean isValidBlock(int x, int y, int z) {
+        return x != -1 && y != -1 && z == -1;
     }
 
 }
