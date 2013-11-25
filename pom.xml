@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.gmail.stevenpcc</groupId>
   <artifactId>ArrowHitBlockEvent</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0-RELEASE</version>
   <name>Arrow Hit Block Event</name>
   <description>Fires an event when an arrow hits a block</description>
   <repositories>
