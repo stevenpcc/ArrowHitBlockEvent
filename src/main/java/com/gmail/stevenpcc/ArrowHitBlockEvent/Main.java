@@ -3,7 +3,6 @@ package com.gmail.stevenpcc.ArrowHitBlockEvent;
 import java.lang.reflect.Field;
 
 import org.bukkit.Bukkit;
-import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_6_R3.entity.CraftArrow;
 import org.bukkit.entity.Arrow;
