@@ -73,7 +73,7 @@ public class Main extends JavaPlugin implements Listener {
 
     // If the arrow hits a mob or player the coords will be -1
     private boolean isValidBlock(int x, int y, int z) {
-        return x != -1 && y != -1 && z == -1;
+        return x != -1 && y != -1 && z != -1;
     }
 
 }
