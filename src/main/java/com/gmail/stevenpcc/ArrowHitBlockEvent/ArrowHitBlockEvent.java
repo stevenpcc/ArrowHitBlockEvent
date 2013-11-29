@@ -9,8 +9,8 @@ public class ArrowHitBlockEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
 
-    Arrow arrow;
-    Block block;
+    private Arrow arrow;
+    private Block block;
 
     public ArrowHitBlockEvent(Arrow arrow, Block block) {
         this.arrow = arrow;
