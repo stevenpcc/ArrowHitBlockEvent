@@ -23,7 +23,6 @@ public class Main extends JavaPlugin implements Listener {
     
     @EventHandler
     private void onProjectileHit(final ProjectileHitEvent e) {
-        getLogger().info("Firing projectile event");
         if (e.getEntityType() == EntityType.ARROW) {
             // Must be run in a delayed task otherwise it won't be able to find the block
             Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
