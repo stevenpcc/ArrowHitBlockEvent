@@ -1,4 +1,4 @@
-package com.gmail.stevenpcc.ArrowHitBlockEvent;
+package com.gmail.stevenpcc.arrowhitblockevent;
 
 import java.lang.reflect.Field;
 

@@ -1,4 +1,4 @@
-package com.gmail.stevenpcc.ArrowHitBlockEvent;
+package com.gmail.stevenpcc.arrowhitblockevent;
 
 import org.bukkit.block.Block;
 import org.bukkit.entity.Arrow;
