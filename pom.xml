@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.gmail.stevenpcc</groupId>
   <artifactId>ArrowHitBlockEvent</artifactId>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
   <name>ArrowHitBlockEvent</name>
   <description>Fires an event when an arrow hits a block</description>
   <repositories>
@@ -16,7 +16,7 @@
     <dependency>
       <groupId>org.bukkit</groupId>
       <artifactId>craftbukkit</artifactId>
-      <version>1.7.2-R0.3</version>
+      <version>1.7.5-R0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
     

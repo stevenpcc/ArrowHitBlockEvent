@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 
 import org.bukkit.Bukkit;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_7_R1.entity.CraftArrow;
+import org.bukkit.craftbukkit.v1_7_R2.entity.CraftArrow;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
@@ -29,14 +29,14 @@ public class Main extends JavaPlugin implements Listener {
                 public void run() {
                     try {
 
-                        net.minecraft.server.v1_7_R1.EntityArrow entityArrow = ((CraftArrow) e
+                        net.minecraft.server.v1_7_R2.EntityArrow entityArrow = ((CraftArrow) e
                                 .getEntity()).getHandle();
 
-                        Field fieldX = net.minecraft.server.v1_7_R1.EntityArrow.class
+                        Field fieldX = net.minecraft.server.v1_7_R2.EntityArrow.class
                                 .getDeclaredField("d");
-                        Field fieldY = net.minecraft.server.v1_7_R1.EntityArrow.class
+                        Field fieldY = net.minecraft.server.v1_7_R2.EntityArrow.class
                                 .getDeclaredField("e");
-                        Field fieldZ = net.minecraft.server.v1_7_R1.EntityArrow.class
+                        Field fieldZ = net.minecraft.server.v1_7_R2.EntityArrow.class
                                 .getDeclaredField("f");
 
                         fieldX.setAccessible(true);
