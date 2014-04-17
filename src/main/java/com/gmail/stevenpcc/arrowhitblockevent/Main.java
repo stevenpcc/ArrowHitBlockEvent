@@ -47,7 +47,7 @@ public class Main extends JavaPlugin implements Listener {
                         int y = fieldY.getInt(entityArrow);
                         int z = fieldZ.getInt(entityArrow);
 
-                        if (isValidBlock(x, y, z)) {
+                        if (isValidBlock(y)) {
                             Block block = e.getEntity().getWorld().getBlockAt(x, y, z);
                             Bukkit.getServer()
                                     .getPluginManager()
@@ -71,9 +71,9 @@ public class Main extends JavaPlugin implements Listener {
         }
     }
 
-    // If the arrow hits a mob or player the coords will be -1
-    private boolean isValidBlock(int x, int y, int z) {
-        return x != -1 && y != -1 && z != -1;
+    // If the arrow hits a mob or player the y coord will be -1
+    private boolean isValidBlock(int y) {
+        return y != -1;
     }
 
 }
